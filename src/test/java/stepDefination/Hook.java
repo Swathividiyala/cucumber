@@ -1,9 +1,10 @@
 package stepDefination;
 
+import cucumberautomation.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class Hook {
+public class Hook extends Base {
 	
 	@Before("@SmokeTest")
 	public void beforeValidation()
@@ -14,6 +15,12 @@ public class Hook {
 	public void AfterValidation()
 	{
 		System.out.println("After hook the application");
+	}
+	
+	@After("@SeleniumTest")
+	public void closeBrowser()
+	{
+		driver.close();
 	}
 
 }

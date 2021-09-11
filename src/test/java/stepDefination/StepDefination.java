@@ -4,13 +4,17 @@ import java.util.List;
 
 import org.junit.runner.RunWith;
 
+import cucumberautomation.Base;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
+import pageObjects.CheckoutPage;
 
 @RunWith(Cucumber.class)
-public class StepDefination {
+public class StepDefination extends Base {
+	
+	CheckoutPage ch;
 	
 	@Given("User is on application")
 	public void user_is_on_application() {
@@ -39,7 +43,13 @@ public class StepDefination {
 		
 	 
 	}
-	
+	@Then("User proceeded to checkout page to purchase the items")
+	public void user_proceeded_to_checkout_page_to_purchase_the_items() {
+		ch=new CheckoutPage(driver);
+	   ch.addtoCart().click();
+	   ch.proceedtoCart().click();
+	   
+	   }
 	
 	@When("^Login application with (.+) and (.+)$")
 	public void login_application_with_username_and_password(String username, String password) {
