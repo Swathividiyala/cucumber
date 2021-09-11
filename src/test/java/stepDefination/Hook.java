@@ -22,5 +22,10 @@ public class Hook extends Base {
 	{
 		driver.close();
 	}
+	@After("@SeleniumTest1")
+	public void closeBrowser1()
+	{
+		driver.close();
+	}
 
 }

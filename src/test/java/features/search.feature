@@ -1,6 +1,6 @@
 Feature: Search and place the vegetables
 
-@SeleniumTest
+@SeleniumTest1
 Scenario: Searach the veagetables to place 
 Given Valide the searched vegetables and display
 When User enter Cucumber in the search field
